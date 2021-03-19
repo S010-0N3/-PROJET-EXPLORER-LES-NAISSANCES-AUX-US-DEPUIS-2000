@@ -41,9 +41,24 @@ def month_birth(list):
 
 
 
+#Calculer le nombre de naissances par jour de la semaine
+def days_birth(list):
+  births_per_days = {}
+
+  for li in list:
+    day= li[3]
+    births = li[4]
+    if day in births_per_days:
+      births_per_days[day] += births
+    else:
+      births_per_days[day] = births
+  
+  return(births_per_days)
+
 
 us_month_births = month_birth(us_birth_list)
+us_days_births = days_birth(us_birth_list)
 
 print(us_month_births)
-
+print(us_days_births)
 
